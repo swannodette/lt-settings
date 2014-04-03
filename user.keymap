@@ -1,0 +1,57 @@
+;; User keymap
+;; -----------------------------
+;; Keymaps are stored as a set of diffs that are merged together together
+;; to create the final set of keys. You can modify these diffs to either add
+;; or subtract bindings.
+;;
+;; Like behaviors, keys are bound by tag. When objects with those tags are active
+;; the key bindings are live. Keys can be bound to any number of Light Table commands,
+;; allowing you the flexibility to execute multiple operations together. To see a list
+;; of all the commands you can execute, start typing a word related to the thing you
+;; want to do in between the square brackets (e.g. type "editor").
+
+{:+ {:app {}
+     :editor {"alt-w" [:editor.watch.watch-selection]
+              "alt-shift-w" [:editor.watch.unwatch]
+              "cmd-shift-c" [:toggle-console]
+              "cmd-shift-t" [:workspace.show]
+              "cmd-shift-a" [:show-add-connection]
+              "cmd-alt-shift-c" [:clear-inline-results]}
+     :editor.clojure {"ctrl-shift-k" [:paredit-plus.kill]
+                      "alt-shift-9" [:paredit-plus.wrap-round]
+                      "alt-{" [:paredit-plus.wrap-curly]
+                      "alt-[" [:paredit-plus.wrap-square]
+                      "alt-j" [:paredit-plus.join-sexps]
+                      "cmd-shift-left" [:paredit.grow.left]
+                      "cmd-shift-right" [:paredit.grow.right]
+                      "alt-shift-left" [:paredit.shrink.right]
+                      "alt-shift-right" [:paredit.shrink.left]
+                      "cmd-alt-up" [:paredit.select.parent]
+                      "alt-s" [:paredit-plus.splice-sexp]
+                      "alt-shift-s" [:paredit-plus.split-sexp]
+                      "alt-r" [:paredit-plus.raise-sexp]
+                      "ctrl-f" [:editor.char-right]
+                      "shift-enter" [:paredit-plus.new-line-after-pair-close]
+                      "delete" [:paredit-plus.backward-delete]}
+     :editor.keys.normal.clojure {"backspace" [:paredit-plus.backward-delete]
+                                  "ctrl-d" [:paredit-plus.forward-delete]}
+     :editor.cljs {"ctrl-shift-k" [:paredit-plus.kill]
+                   "alt-shift-9" [:paredit-plus.wrap-round]
+                   "alt-{" [:paredit-plus.wrap-curly]
+                   "alt-[" [:paredit-plus.wrap-square]
+                   "alt-j" [:paredit-plus.join-sexps]
+                   "cmd-shift-left" [:paredit.grow.left]
+                   "cmd-shift-right" [:paredit.grow.right]
+                   "alt-shift-left" [:paredit.shrink.right]
+                   "alt-shift-right" [:paredit.shrink.left]
+                   "cmd-alt-up" [:paredit.select.parent]
+                   "alt-s" [:paredit-plus.splice-sexp]
+                   "alt-shift-s" [:paredit-plus.split-sexp]
+                   "alt-r" [:paredit-plus.raise-sexp]
+                   "ctrl-f" [:editor.char-right]
+                   "shift-enter" [:paredit-plus.new-line-after-pair-close]
+                   "delete" [:paredit-plus.backward-delete]
+                   "backspace" [:paredit-plus.backward-delete]}
+     :editor.keys.normal.cljs {"backspace" [:paredit-plus.backward-delete]
+                               "ctrl-d" [:paredit-plus.forward-delete]}
+}}
